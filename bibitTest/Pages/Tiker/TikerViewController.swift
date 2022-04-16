@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol TikerViewInterface: AnyObject {
-    func presentData(_ tickers: [Tiker])
-}
-
 final class TikerViewController: UITableViewController {
     private let presenter: TikerPresenterInterface
     private var tickers: [Tiker] = []
@@ -52,8 +48,16 @@ final class TikerViewController: UITableViewController {
     }
 }
 
-extension TikerViewController: TikerViewInterface {
-    func presentData(_ tickers: [Tiker]) {
+extension TikerViewController: View {
+    func presentData(_ data: DomainData) {
+        
+    }
+    
+    func presentListData(_ data: [DomainData]) {
+        guard let tickers = data as? [Tiker] else {
+            return
+        }
+        
         self.tickers = tickers
         tableView.reloadData()
     }

@@ -12,8 +12,8 @@ protocol TikerPresenterInterface {
     func load()
 }
 
-final class TikerPresenter: TikerPresenterInterface {
-    weak var view: TikerViewInterface?
+final class TikerPresenter: Presenter, TikerPresenterInterface {
+    var view: View?
     
     private let interactor: TikerInteractorInterface
     
@@ -30,7 +30,8 @@ final class TikerPresenter: TikerPresenterInterface {
                 let tickers = apiTickers.map {
                     $0.toDomain()
                 }
-                self.view?.presentData(tickers)
+                
+                self.showList(tickers)
             }
         }
     }

@@ -23,6 +23,7 @@
 		6110A58727F5F84200DC8992 /* BasicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6110A58627F5F84200DC8992 /* BasicResponse.swift */; };
 		6110A58927F5F8A900DC8992 /* ApiTicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6110A58827F5F8A900DC8992 /* ApiTicker.swift */; };
 		6110A58C27F5FF9D00DC8992 /* Tiker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6110A58B27F5FF9D00DC8992 /* Tiker.swift */; };
+		611F54FF280AB74600482A82 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F54FE280AB74600482A82 /* Presenter.swift */; };
 		6153526F27F677A20051E062 /* TikerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153526E27F677A20051E062 /* TikerPresenterTests.swift */; };
 		6153527027F683010051E062 /* TikerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153526927F674B40051E062 /* TikerViewControllerTests.swift */; };
 		6153527127F683180051E062 /* MockTickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153526C27F675750051E062 /* MockTickerPresenter.swift */; };
@@ -69,6 +70,7 @@
 		6110A58627F5F84200DC8992 /* BasicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicResponse.swift; sourceTree = "<group>"; };
 		6110A58827F5F8A900DC8992 /* ApiTicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTicker.swift; sourceTree = "<group>"; };
 		6110A58B27F5FF9D00DC8992 /* Tiker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tiker.swift; sourceTree = "<group>"; };
+		611F54FE280AB74600482A82 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		6153526927F674B40051E062 /* TikerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikerViewControllerTests.swift; sourceTree = "<group>"; };
 		6153526C27F675750051E062 /* MockTickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTickerPresenter.swift; sourceTree = "<group>"; };
 		6153526E27F677A20051E062 /* TikerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikerPresenterTests.swift; sourceTree = "<group>"; };
@@ -125,10 +127,10 @@
 		6110A54827F58D8200DC8992 /* bibitTest */ = {
 			isa = PBXGroup;
 			children = (
+				611F54FD280AB71A00482A82 /* Pages */,
 				6110A58527F5F82E00DC8992 /* ApiModel */,
 				6110A57C27F58E2700DC8992 /* Components */,
 				6110A58A27F5FF8B00DC8992 /* DomainModel */,
-				6110A57927F58DA100DC8992 /* Tiker */,
 				6110A54927F58D8200DC8992 /* AppDelegate.swift */,
 				6110A54B27F58D8200DC8992 /* SceneDelegate.swift */,
 				6110A54D27F58D8200DC8992 /* ViewController.swift */,
@@ -193,6 +195,15 @@
 				6110A58B27F5FF9D00DC8992 /* Tiker.swift */,
 			);
 			path = DomainModel;
+			sourceTree = "<group>";
+		};
+		611F54FD280AB71A00482A82 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				6110A57927F58DA100DC8992 /* Tiker */,
+				611F54FE280AB74600482A82 /* Presenter.swift */,
+			);
+			path = Pages;
 			sourceTree = "<group>";
 		};
 		6153526B27F675580051E062 /* Helper */ = {
@@ -351,6 +362,7 @@
 				6110A54A27F58D8200DC8992 /* AppDelegate.swift in Sources */,
 				6110A57B27F58DBE00DC8992 /* TikerViewController.swift in Sources */,
 				6110A58427F5F2D900DC8992 /* TikerRouter.swift in Sources */,
+				611F54FF280AB74600482A82 /* Presenter.swift in Sources */,
 				6110A58C27F5FF9D00DC8992 /* Tiker.swift in Sources */,
 				6110A58227F5F24900DC8992 /* TikerInteractor.swift in Sources */,
 				6110A58927F5F8A900DC8992 /* ApiTicker.swift in Sources */,

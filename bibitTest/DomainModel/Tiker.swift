@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Tiker {
+struct Tiker: DomainData {
     let name: String
     let fullName: String
     let currency: String

@@ -25,36 +25,26 @@ final class TikerInteractor: TikerInteractorInterface {
         request.addValue("06ea84698ceee3fde0c88365941cab5747f399d1e603c377aac411a1545697f9",
                          forHTTPHeaderField: "authorization")
         
-        DispatchQueue.global(qos: .background).async {
-            URLSession.shared.dataTask(with: request) { data, _, error in
-                if let error = error {
-                    DispatchQueue.main.async {
-                        result(.error(error.localizedDescription))
-                    }
-                    return
-                }
-                
-                guard let data = data else {
-                    DispatchQueue.main.async {
-                        result(.error("cant parse data from api"))
-                    }
-                    return
-                }
-                
-                do {
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromPascalCase
-                    let response = try decoder.decode(BasicResponse<[ApiTiker]>.self, from: data)
-                    DispatchQueue.main.async {
-                        result(.success(response.data))
-                    }
-                } catch {
-                    DispatchQueue.main.async {
-                        result(.error(error.localizedDescription))
-                    }
-                }
-            }.resume()
-        }
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error {
+                result(.error(error.localizedDescription))
+                return
+            }
+            
+            guard let data = data else {
+                result(.error("cant parse data from api"))
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromPascalCase
+                let response = try decoder.decode(BasicResponse<[ApiTiker]>.self, from: data)
+                result(.success(response.data))
+            } catch {
+                result(.error(error.localizedDescription))
+            }
+        }.resume()
     }
 }
 
@@ -65,7 +55,7 @@ extension JSONDecoder.KeyDecodingStrategy {
             guard key.intValue == nil else {
                 return key
             }
-
+            
             let codingKeyType = type(of: key)
             let newStringValue = key.stringValue.firstCharLowercased()
 

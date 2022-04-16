@@ -12,9 +12,9 @@ final class TikerRouter {
     private(set) var vc: UIViewController!
     
     init() {
-        let presenter = TikerPresenter(interactor: TikerInteractor())
+        var presenter = TikerPresenter(interactor: TikerInteractor())
         vc = TikerViewController(presenter: presenter)
-        if let vc = vc as? TikerViewInterface {
+        if let vc = vc as? View {
             presenter.view = vc
         }
     }
